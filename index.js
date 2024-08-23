@@ -17,10 +17,7 @@ const pool = mysql.createPool( {
     host: dbHost,
     user: dbUser,
     password: dbPass,
-    database: dbName,
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+    database: dbName
 })
 
 //TESTING GET METHOD TO CHECK IF THE APP IS WORKING
