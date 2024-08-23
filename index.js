@@ -14,10 +14,13 @@ const app = express()
 app.use(bodyParser.json())
 
 const pool = mysql.createPool( {
-    host: 'localhost',
-    user: 'root',
-    password: 'vanshkalra',
-    database: 'school_management'
+    host: dbHost,
+    user: dbUser,
+    password: dbPass,
+    database: dbName,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 })
 
 //TESTING GET METHOD TO CHECK IF THE APP IS WORKING
