@@ -1,6 +1,13 @@
 const express = require('express')
 const mysql = require('mysql2')
 const bodyParser = require('body-parser')
+require('dotenv').config()
+
+const dbHost = process.env.DB_HOST
+const dbUser = process.env.DB_USER
+const dbPass = process.env.DB_PASS
+const dbName = process.env.DB_NAME
+const port = process.env.PORT || 5000
 
 const app = express()
 
@@ -89,7 +96,6 @@ function deg2rad(deg) {
     return deg * (Math.PI / 180);
 }
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`)
 });
