@@ -22,7 +22,7 @@ const pool = mysql.createPool( {
 
 //TESTING GET METHOD TO CHECK IF THE APP IS WORKING
 app.get('', (req,res) => {
-    res.send("Express working");
+    res.send("Server running.");
 
 })
 
